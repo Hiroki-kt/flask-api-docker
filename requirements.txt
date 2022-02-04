@@ -1,0 +1,16 @@
+# pip install list
+matplotlib
+# mediapipe == 0.8.9.1
+memory-profiler
+numpy
+opencv-contrib-python
+opencv-python
+pandas
+Pillow
+requests
+scikit-learn
+scipy
+seaborn
+tqdm
+flask
+# tensorflow
