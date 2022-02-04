@@ -1,6 +1,6 @@
 # pip install list
 matplotlib
-# mediapipe == 0.8.9.1
+mediapipe == 0.8.9.1
 memory-profiler
 numpy
 opencv-contrib-python
@@ -13,4 +13,5 @@ scipy
 seaborn
 tqdm
 flask
-# tensorflow
+tensorflow
+sympy
