@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Hello flask"
+    return "Hello flask !!"
 
 
 @app.route("/api", methods=["POST"])
@@ -21,16 +21,19 @@ def postHoge():
 @app.route("/api/mediapipe", methods=["POST"])
 def getPost():
     params = request.json
-    # print(params)
+    # app.logger.warning(params)
     response = {}
-    mpp = MediaPipePose()
-    image, results = mpp.get_born(params.get('image_fpath'))
+    mpp = MediaPipePose(dryrun=True)
+    # image, results = mpp.get_born(params.get('image_fpath'))
+    image, results = mpp.get_born('./test-image1.jpg')
+    # app.logger.warning(results)
+    mpp.write_born(image, results, None, landmark_on=True)
     crop_result = mpp.crop_landmark(
-        image, results, None, resize_size=(112, 112), random_crop=True)
-    if crop_result is not None:
-        if 'param' in params:
-            response.setdefault('res', crop_result)
-        return make_response(jsonify(response))
+        image, results, None, random_crop=True)
+    # if crop_result is not None:
+    if 'param' in params:
+        response.setdefault('res', results)
+    return make_response(jsonify(response))
 
 
 if __name__ == "__main__":

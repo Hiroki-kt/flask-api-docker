@@ -218,7 +218,7 @@ class MediaPipePose(MPTools):
             annotated_image = annotated_image[crop[1]                                              : crop[3], crop[0]: crop[2], :]
         if self.dryrun:
             print(output)
-            out_fname = './temp/mp-test.jpg'
+            out_fname = 'mp-test.jpg'
             cv2.imwrite(out_fname, annotated_image)
             print('---[save sample image]---')
             # sys.exit()
@@ -324,10 +324,10 @@ class MediaPipePose(MPTools):
             # print(f'point:{point}')
         if self.dryrun:
             print(output)
-            out_fname = './temp/landmark-crop-test.jpg'
+            out_fname = 'landmark-crop-test.jpg'
             cv2.imwrite(out_fname, dist_img)
             print('---[save sample image]---')
-            sys.exit()
+            # sys.exit()
         else:
             if output is None:
                 return dist_img

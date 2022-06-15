@@ -23,4 +23,4 @@ RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 RUN export FLASK_DEBUG=1
 
-CMD ["python", "main.py"]
+# CMD ["python", "main.py"]

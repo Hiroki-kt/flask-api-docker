@@ -3,6 +3,7 @@ services:
   webapi:
     restart: always
     build: .
+    command: python main.py
     ports:
       - "5100:5000"
     volumes:
